@@ -28,7 +28,6 @@
     var $sectionHome = $(".section-home"),
         $sectionAbout = $(".section-about"),
         $sectionServices = $(".section-services"),
-        $sectionPortfolio = $(".section-portfolio"),
         $sectionContact = $(".section-contact");
 
     var $onLoadTrigger = $("<div/>", {
@@ -69,7 +68,6 @@
         allH.push($sectionHome.height());
         allH.push($sectionAbout.height());
         allH.push($sectionServices.height());
-        allH.push($sectionPortfolio.height());
         allH.push($sectionContact.height());
         return Math.max.apply(Math, allH);
     };
@@ -78,7 +76,6 @@
         allW.push($sectionHome.width());
         allW.push($sectionAbout.width());
         allW.push($sectionServices.width());
-        allW.push($sectionPortfolio.width());
         allW.push($sectionContact.width());
         return Math.max.apply(Math, allW);
     };
@@ -211,7 +208,7 @@
      * Fullpage.js
      * --------------------- */
     $('#main').fullpage({
-        anchors: ['home', 'about', 'services', 'portfolio', 'contact'],
+        anchors: ['home', 'about', 'services', 'contact'],
         responsiveWidth: maxW(),
         responsiveHeight: maxH(),
         navigation: true,
