@@ -27,7 +27,7 @@
     // Sections
     var $sectionHome = $(".section-home"),
         $sectionAbout = $(".section-about"),
-        $sectionServices = $(".section-services"),
+        $sectionPortfolio = $(".section-portfolio"),
         $sectionContact = $(".section-contact");
 
     var $onLoadTrigger = $("<div/>", {
@@ -67,7 +67,7 @@
         var allH = [];
         allH.push($sectionHome.height());
         allH.push($sectionAbout.height());
-        allH.push($sectionServices.height());
+        allH.push($sectionPortfolio.height());
         allH.push($sectionContact.height());
         return Math.max.apply(Math, allH);
     };
@@ -75,65 +75,10 @@
         var allW = [];
         allW.push($sectionHome.width());
         allW.push($sectionAbout.width());
-        allW.push($sectionServices.width());
+        allW.push($sectionPortfolio.width());
         allW.push($sectionContact.width());
         return Math.max.apply(Math, allW);
     };
-
-    /* Portfolio filtering function */
-    var portfolioFilteringMasonry = function () {
-        // Caching selectors
-        var $portfolioContainer = $(".portfolio-grid"),
-            $portfolioItems = $portfolioContainer.find(".grid-item"),
-            $portfolioFilters = $(".portfolio-filters ul"),
-            $portfolioFilter = $portfolioFilters.find("li.portfolio-filter");
-        // Initialize masonry plugin
-        var mas = $portfolioContainer.masonry({
-            itemSelector: '.grid-item',
-            columnWidth: 285,
-            gutter: 5,
-            fitWidth: true,
-            transitionDuration: '1s'
-        });
-        // Bind event listener
-        $portfolioFilters.on("click", "li.portfolio-filter", function () {
-            $portfolioFilter.removeClass("active");
-            $(this).addClass("active");
-            filter($portfolioItems, $(this).data('filter'));
-        });
-        // Portfolio filtering
-        function filter(items, filter) {
-            items = items || '*';
-            var matches = [];
-            var hiddenMatched = [];
-            var visibleUnmatched = [];
-            if (filter !== "all") {
-                // test each item
-                for (var i = 0; i < items.length; i++) {
-                    var item = items[i];
-                    var isMatched = $(item).data("category") === filter;
-                    // add to matches if its a match
-                    if (isMatched) {
-                        matches.push(item);
-                    }
-                    // add to additional group if item needs to be hidden or revealed
-                    if (isMatched && $(item).is(":hidden")) {
-                        hiddenMatched.push(item);
-                    } else if (!isMatched && !$(item).is(":hidden")) {
-                        visibleUnmatched.push(item);
-                    }
-                }
-            } else {
-                for (var i = 0; i < items.length; i++) {
-                    hiddenMatched.push(items[i]);
-                }
-            }
-            $(visibleUnmatched).hide();
-            $(hiddenMatched).show();
-            mas.masonry('layout');
-        }
-    };
-    portfolioFilteringMasonry();
 
     // Prepare page for animation
     var prepareAnimation = function () {
@@ -208,7 +153,7 @@
      * Fullpage.js
      * --------------------- */
     $('#main').fullpage({
-        anchors: ['home', 'about', 'services', 'contact'],
+        anchors: ['home', 'about', 'portfolio', 'contact'],
         responsiveWidth: maxW(),
         responsiveHeight: maxH(),
         navigation: true,
@@ -219,46 +164,6 @@
                 });
             } else {
                 animateSection(index);
-            }
-        }
-    });
-
-
-    /* ---------------------------------------------
-     Portfolio gallery
-     --------------------------------------------- */
-    var $portfolioContainer = $(".portfolio-grid");
-    $portfolioContainer.magnificPopup({
-        delegate: 'a',
-        type: 'image',
-        tLoading: 'Loading image #%curr%...',
-        mainClass: 'mfp-img-mobile',
-        removalDelay: 500,
-        closeBtnInside: false,
-        showCloseBtn: false,
-        gallery: {
-            enabled: true,
-            navigateByImgClick: true,
-            preload: [0, 1]
-        },
-        image: {
-            tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-            titleSrc: function (item) {
-                return item.el.attr('title');
-            }
-        },
-        callbacks: {
-            beforeOpen: function () {
-                this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
-                this.st.mainClass = "mfp-zoom-in";
-            },
-            open: function () {
-                // disable fullpage.js scrolling
-                $.fn.fullpage.setAllowScrolling(false);
-            },
-            close: function () {
-                // enable fullpage.js scrolling
-                $.fn.fullpage.setAllowScrolling(true);
             }
         }
     });

@@ -902,119 +902,20 @@ input:active, input:focus, input:hover, textarea:active, textarea:focus, textare
 
 /* Services section */
 /* line 76, sass/components/_sections.sass */
-.section-services .service-cards {
+.section-portfolio .service-cards {
   margin-top: 80px;
 }
 
 /* line 78, sass/components/_sections.sass */
-.section-services .service-cards .service-icon {
+.section-portfolio .service-cards .service-icon {
   width: 128px;
   height: 128px;
 }
 
 /* line 81, sass/components/_sections.sass */
-.section-services .service-cards .service-header {
+.section-portfolio .service-cards .service-header {
   margin-top: 40px;
   margin-bottom: 25px;
-}
-
-/* Portfolio section */
-/* line 87, sass/components/_sections.sass */
-.section-portfolio .inline-list {
-  margin: 10px 0 0 0;
-}
-
-/* line 89, sass/components/_sections.sass */
-.section-portfolio .portfolio-filters ul > li.portfolio-filter {
-  position: relative;
-  display: inline-block;
-  padding: 10px 25px;
-  border: 2px solid #fff;
-  color: #fff;
-  text-transform: uppercase;
-  font-family: 'Lato', sans-serif;
-  font-weight: 900;
-  letter-spacing: .3em;
-  font-size: 1.1rem;
-  overflow: hidden;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
-  text-decoration: none;
-  outline: 0;
-  cursor: pointer;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-/* line 107, sass/components/_sections.sass */
-.section-portfolio .portfolio-filters ul > li.portfolio-filter:hover, .section-portfolio .portfolio-filters ul > li.portfolio-filter.active {
-  background-color: #fff;
-  color: #000;
-}
-
-/* line 110, sass/components/_sections.sass */
-.section-portfolio .portfolio-grid {
-  margin-top: 40px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* line 114, sass/components/_sections.sass */
-.section-portfolio .grid-item {
-  width: 285px;
-  height: 185px;
-  margin-bottom: 5px;
-  overflow: hidden;
-  float: left;
-  position: relative;
-}
-
-/* line 122, sass/components/_sections.sass */
-.section-portfolio .grid-item .portfolio-image:before {
-  content: '';
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #000;
-  z-index: 10;
-  opacity: 0;
-  -webkit-transition: opacity 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-  transition: opacity 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-}
-
-/* line 133, sass/components/_sections.sass */
-.section-portfolio .grid-item .portfolio-image:after {
-  content: '';
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 11;
-  opacity: 0;
-  background: url("../img/plus.png") no-repeat center center;
-  -webkit-transition: opacity 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0.1s;
-  transition: opacity 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0.1s;
-}
-
-/* line 145, sass/components/_sections.sass */
-.section-portfolio .grid-item .portfolio-image:hover:before, .section-portfolio .grid-item .portfolio-image:hover:after {
-  opacity: .9;
-}
-
-/* line 148, sass/components/_sections.sass */
-.section-portfolio .grid-item .portfolio-image img {
-  width: 285px;
-  height: 185px;
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
-  -webkit-filter: grayscale(1);
-          filter: grayscale(1);
-  opacity: 0.9;
-  cursor: pointer;
-  position: relative;
 }
 
 /* Contact section */
