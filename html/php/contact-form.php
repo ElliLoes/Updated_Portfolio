@@ -6,7 +6,7 @@ if (filter_var($_REQUEST['email'], FILTER_VALIDATE_EMAIL)):
   $subject = 'Email from NOISE template'; // Subject of your email
 
   // Receiver email address
-  $to = 'support@neonunicorns.com';  //Change the email address by yours
+  $to = 'elisabeth.loeser@gmail.com';  //Change the email address by yours
  
 
   // prepare header

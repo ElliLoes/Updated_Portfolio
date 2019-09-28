@@ -908,8 +908,9 @@ input:active, input:focus, input:hover, textarea:active, textarea:focus, textare
 
 /* line 78, sass/components/_sections.sass */
 .section-portfolio .service-cards .service-icon {
-  width: 128px;
-  height: 128px;
+  width: 300px;
+  height: 150px;
+  border: 1px solid black;
 }
 
 /* line 81, sass/components/_sections.sass */
